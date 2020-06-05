@@ -9,9 +9,9 @@ function MVVM(options) {
   this.$data = options.data;
   this.$method = options.method;
   if (this.$el) {
-    //对所有数据进行劫持
+    // 对所有数据进行劫持
     new Observer(this.$data);
-    //将数据直接代理到实例中，无需通过vm.$data来操作
+    // 将数据直接代理到实例中，无需通过vm.$data来操作
     this.proxyData(this.$data);
     new Compile(this.$el, this);
   }
@@ -19,15 +19,15 @@ function MVVM(options) {
 
 MVVM.prototype = {
   proxyData: function (data) {
-    Object.keys(data).forEach(key => {
+    Object.keys(data).forEach((key) => {
       Object.defineProperty(this, key, {
         get() {
           return data[key];
         },
         set(newValue) {
           data[key] = newValue;
-        }
+        },
       });
     });
-  }
+  },
 };
