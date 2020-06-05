@@ -33,8 +33,8 @@ Watcher.prototype = {
   addDep: function (dep) {
     // 检查depIds对象是否存在某个实例，避免去查找原型链上的属性
     if (!this.depIds.hasOwnProperty(dep.id)) {
-      dep.addSub(this); //在 dep 存储 watcher 监听器
-      this.depIds[dep.id] = dep; //在 watcher 存储订阅者 dep
+      dep.addSub(this); // 在 dep 存储 watcher 监听器
+      this.depIds[dep.id] = dep; // 在 watcher 存储订阅者 dep
     }
   },
 

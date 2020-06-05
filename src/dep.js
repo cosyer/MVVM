@@ -1,7 +1,7 @@
 /**
  * author: cosyer
  * date: 2018-10-31
- * desc: 消息订阅器的容器 --- 用于收集订阅者 watcher 负责添加watcher，更新watcher，移除watcher,通知watcher更新
+ * desc: 消息订阅器的容器 --- 用于收集订阅者 watcher 负责添加watcher，更新watcher，移除watcher，通知watcher更新
  */
 // 订阅事件的唯一标识
 let uid = 0;
