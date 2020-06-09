@@ -11,17 +11,17 @@
       <!-- 插值绑定 -->
       <p>{{name}}</p>
       <!-- 指令解析 -->
-      <p k-text="name"></p>
+      <p e-text="name"></p>
       <p>{{age}}</p>
       <p>
         {{doubleAge}}
       </p>
       <!-- 双向绑定 -->
-      <input type="text" k-model="name" />
+      <input type="text" e-model="name" />
       <!-- 事件处理 -->
       <button @click="changeName">呵呵</button>
       <!-- html内容解析 -->
-      <div k-html="html"></div>
+      <div e-html="html"></div>
     </div>
     <script src="./compile.js"></script>
     <script src="./euv.js"></script>
@@ -42,8 +42,8 @@
         },
         methods: {
           changeName() {
-            this.name = "残梦a博客园";
-            this.age = 1;
+            this.name = "cosyer";
+            this.age = 25;
           },
         },
       });

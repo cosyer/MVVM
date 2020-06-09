@@ -36,13 +36,13 @@ class Compile {
       if (this.isElement(node)) {
         // 元素
         // console.log('编译元素'+node.nodeName);
-        // 查找k-，@，:
+        // 查找e-，@，:
         const nodeAttrs = node.attributes;
         Array.from(nodeAttrs).forEach((attr) => {
           const attrName = attr.name; //属性名
           const exp = attr.value; // 属性值
           if (this.isDirective(attrName)) {
-            // k-text
+            // e-text
             const dir = attrName.substring(2);
             // 执行指令
             this[dir] && this[dir](node, this.$vm, exp);
@@ -122,7 +122,7 @@ class Compile {
   }
 
   isDirective(attr) {
-    return attr.indexOf("k-") == 0;
+    return attr.indexOf("e-") == 0;
   }
   isEvent(attr) {
     return attr.indexOf("@") == 0;
