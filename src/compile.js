@@ -4,8 +4,10 @@
  * desc: 编译类
  */
 function Compile(el, vm) {
+  // 判断是否是节点元素 是=>取该元素 否=>取文本
   this.el = this.isElementNode(el) ? el : document.querySelector(el);
   this.vm = vm;
+  // 开始编译
   if (this.el) {
     // 将真实DOM移入内存 fragment 中
     let fragment = this.node2Fragment(this.el);
@@ -71,7 +73,7 @@ Compile.prototype = {
           return;
         }
         let type = attrArr[1]; // 获取指令是哪种类型，比如v-model,v-text
-        // 如果是事件指令
+        // 如果是事件指令 v-on
         if (this.isEventDirective(type)) {
           CompileUtil.eventHandler(node, this.vm, expr, type);
         } else {
